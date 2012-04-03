@@ -11,6 +11,7 @@
     NSString* name;
     NSString* cuisineType;
     int yearOpened;
+    NSArray* reviews; 
     
     
 }
