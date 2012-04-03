@@ -11,7 +11,7 @@
 @interface Review : NSObject
 
 {
-    NSString* reviewerName;
+    NSString* ReviewerName;
     NSString* text;
     int score; //(1 to 5, how good the reviewer thought the restaurant was)
     int numberOfHelpfulRatings;
@@ -19,7 +19,7 @@
     
 }
 
-@property(readwrite, strong) NSString* reviewerName;
+@property(readwrite, strong) NSString* ReviewerName;
 @property(readwrite, strong) NSString* text;
 @property(readwrite) int score;
 @property(readwrite) int numberOfHelpfulRatings;

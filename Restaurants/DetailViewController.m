@@ -55,7 +55,7 @@
     
     Review* review4 = [[Review alloc] init];
     review4.text = @"While the food is amazing, they often simply don't pick up the phone when ordering out!";
-// review4.reviewer = @"Paul";
+//  review4.reviewer = @"Paul";
     review4.score = 4;
     review4.numberOfHelpfulRatings = 14;
     review4.numberOfUnhelpfulRatings = 5;
@@ -68,6 +68,9 @@
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
+    helpfulReviewLabel.text = [review3 text];
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"%i help %i unhelp", review3.numberOfHelpfulRatings, review3.numberOfUnhelpfulRatings];
+
     
 }
 
