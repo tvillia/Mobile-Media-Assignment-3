@@ -48,11 +48,11 @@
     
     Review* review3 = [[Review alloc] init];
     review3.text = @"Some of the best chicken I've ever eaten. A helpful tip: get some green (Aji) sauce to go, they sell it by the pint!";
-//  review3.reviewer = @"Jim Carr";
+    review3.reviewerName = @"Jim Carr";
     review3.score = 5;
     review3.numberOfHelpfulRatings = 28;
     review3.numberOfUnhelpfulRatings = 2;
-    
+        
     Review* review4 = [[Review alloc] init];
     review4.text = @"While the food is amazing, they often simply don't pick up the phone when ordering out!";
 //  review4.reviewer = @"Paul";
@@ -60,14 +60,24 @@
     review4.numberOfHelpfulRatings = 14;
     review4.numberOfUnhelpfulRatings = 5;
 
+    NSArray* array = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
+    NSArray* reviews = [restaurant reviews];
+    for (int i = 0; i < [reviews count]; i++) {
+        Review* review = [reviews objectAtIndex:i];
+        NSLog(@"Review Text: %@", review.text);
+        for (Review* review in [restaurant reviews]) {
+            NSLog(@"Review Text: %@", review.text);
+        }
+    }
     
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
-    helpfulReviewLabel.text = [review3 text];    
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"%i helpful %i unhelpful", review3.numberOfHelpfulRatings, review3.numberOfUnhelpfulRatings];
+    helpfulReviewLabel.text = [NSString stringWithFormat: review3.text, [review3 ReviewerName]];
+    helpfulReviewPercentageLabel.text =    [NSString stringWithFormat: @"%i helpful reviews out of %i", review3.numberOfHelpfulRatings, [review3 total]];
 
+    
 }
 
 

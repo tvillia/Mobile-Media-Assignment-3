@@ -12,6 +12,7 @@
     NSString* cuisineType;
     int yearOpened;
     NSArray* reviews; 
+   
     
     
 }
@@ -19,7 +20,9 @@
 @property(readwrite, strong) NSString* name;
 @property(readwrite, strong) NSString* cuisineType;
 @property(readwrite) int yearOpened;
-
+@property(readwrite, strong) NSArray* reviews;
 -(int)age;
 
 @end
+
+//go back to assignemnt 2, complete the restaurant age. COMPLETED 

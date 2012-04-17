@@ -17,6 +17,7 @@
     int score; //(1 to 5, how good the reviewer thought the restaurant was)
     int numberOfHelpfulRatings;
     int numberOfUnhelpfulRatings;
+    
 
 }
 
@@ -25,6 +26,7 @@
 @property(readwrite) int score;
 @property(readwrite) int numberOfHelpfulRatings;
 @property(readwrite) int numberOfUnhelpfulRatings;
+-(int) total; 
 
 @end
 // @property(readwrite, strong) NSString* address;
