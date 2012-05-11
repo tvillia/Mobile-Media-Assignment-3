@@ -20,6 +20,11 @@
 @synthesize star4;
 @synthesize star5;
 
+-(Review *)findMostHelpfulReview
+{
+    return nil;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
