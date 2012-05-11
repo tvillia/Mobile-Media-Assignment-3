@@ -8,26 +8,26 @@
 #import "Review.h"
 
 @implementation DetailViewController
+
 @synthesize addressLabel;
 @synthesize navigationHeader;
 @synthesize cuisineLabel;
 @synthesize ageLabel;
 @synthesize helpfulReviewPercentageLabel;
 @synthesize helpfulReviewLabel;
+@synthesize restaurant;
+
 @synthesize star1;
 @synthesize star2;
 @synthesize star3;
 @synthesize star4;
 @synthesize star5;
 
--(Review *)findMostHelpfulReview
-{
-    return nil;
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
+
+
 {
     [super viewDidLoad];
     restaurant = [[Restaurant alloc] init];
@@ -37,6 +37,9 @@
     restaurant.cuisineType = @"Peruvian";
     restaurant.yearOpened = 1995;
     
+    
+    Review* findMostHelpfulRatings=[restaurant mostHelpfulRatings];
+
     Review* review1 = [[Review alloc] init];
     review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
     //    review1.reviewer = @"The Addams";
@@ -65,17 +68,56 @@
     review4.numberOfHelpfulRatings = 14;
     review4.numberOfUnhelpfulRatings = 5;
     
-    NSArray* array = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
+    Review* review5 = [[Review alloc] init];
+    review5.text = @"The food was so awful! I think they cook everything in a trashcan!";
+    //  review4.reviewer = @"Greg";
+    review5.score = 3;
+    review5.numberOfHelpfulRatings = 20;
+    review5.numberOfUnhelpfulRatings = 3;
+
+    
+    
+    
+    NSArray* array = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, review5, nil];
     NSArray* reviews = [restaurant reviews];
     
-    for (id review in reviews) { }
     
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
-    helpfulReviewLabel.text = [NSString stringWithFormat: review3.text, [review3 ReviewerName]];
-    helpfulReviewPercentageLabel.text =    [NSString stringWithFormat: @"%i helpful reviews out of %i", review3.numberOfHelpfulRatings, [review3 total]];
+   
+    Review* mostHelpful=[restaurant mostHelpfulRatings];
+    
+    helpfulReviewLabel.text = [mostHelpful text];
+    if (helpfulReviewLabel.text == nil) {
+        helpfulReviewLabel.text = @"Not enough helpful reviews yet.";
+    }
+
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat: @"%i helpful reviews out of %i", review3.numberOfHelpfulRatings, [review3 total]];
+    
+    if (helpfulReviewPercentageLabel.text == nil) {
+        helpfulReviewPercentageLabel.text = @" ";
+    }
+    
+    if (([restaurant averageCustomerReview] > 0.1) && ([restaurant averageCustomerReview] < 1.45)) {  
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+    }  
+    if (([restaurant averageCustomerReview] > 1.5) && ([restaurant averageCustomerReview] < 2.45)) {  
+        (star2.image = [UIImage imageNamed:@"Star_ON.png"]) && (star1.image = [UIImage imageNamed:@"Star_ON.png"]);
+    }  
+    if (([restaurant averageCustomerReview] > 2.5) && ([restaurant averageCustomerReview] < 3.45)) {  
+        (star2.image = [UIImage imageNamed:@"Star_ON.png"]) && (star1.image = [UIImage imageNamed:@"Star_ON.png"]) && (star3.image = [UIImage imageNamed:@"Star_ON.png"]);
+    } 
+    if (([restaurant averageCustomerReview] > 3.5) && ([restaurant averageCustomerReview] < 4.45)) {
+        (star2.image = [UIImage imageNamed:@"Star_ON.png"]) && (star1.image = [UIImage imageNamed:@"Star_ON.png"]) && (star3.image = [UIImage imageNamed:@"Star_ON.png"])&&
+        (star4.image = [UIImage imageNamed:@"Star_ON.png"]);
+    }
+    if (([restaurant averageCustomerReview] > 4.5) && ([restaurant averageCustomerReview] < 4.45)) { 
+        (star2.image = [UIImage imageNamed:@"Star_ON.png"]) && (star1.image = [UIImage imageNamed:@"Star_ON.png"]) && (star3.image = [UIImage imageNamed:@"Star_ON.png"]) &&
+        (star4.image = [UIImage imageNamed:@"Star_ON.png"])&&
+        (star5.image = [UIImage imageNamed:@"Star_ON.png"]);
+    } 
     
     
 }

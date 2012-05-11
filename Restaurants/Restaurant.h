@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Review.h"
 
 @interface Restaurant : NSObject
 {
@@ -11,7 +12,7 @@
     NSString* name;
     NSString* cuisineType;
     int yearOpened;
-    NSArray* reviews; 
+    NSMutableArray* reviews; 
    
     
     
@@ -20,8 +21,10 @@
 @property(readwrite, strong) NSString* name;
 @property(readwrite, strong) NSString* cuisineType;
 @property(readwrite) int yearOpened;
-@property(readwrite, strong) NSArray* reviews;
+@property(readwrite, strong) NSMutableArray* reviews;
 -(int)age;
+-(Review*) mostHelpfulRatings;
+-(float) averageCustomerReview;
 
 @end
 

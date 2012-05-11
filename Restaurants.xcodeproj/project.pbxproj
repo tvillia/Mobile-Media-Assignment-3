@@ -103,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				0E6F215314F9FDFC004F682D /* Images */,
+				6E69856F152151780035760F /* Review.h */,
+				6E698570152151780035760F /* Review.m */,
 				0E02F6BB14CD10E300C3EAE8 /* Restaurant.h */,
 				0E02F6BC14CD10E300C3EAE8 /* Restaurant.m */,
 				0EE5A6E214BEB490006BB5E1 /* AppDelegate.h */,
@@ -114,8 +116,6 @@
 				0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */,
 				0E2AFF8414DE3F3600456523 /* Mug.h */,
 				0E2AFF8514DE3F3600456523 /* Mug.m */,
-				6E69856F152151780035760F /* Review.h */,
-				6E698570152151780035760F /* Review.m */,
 				0EE5A6DA14BEB490006BB5E1 /* Supporting Files */,
 			);
 			path = Restaurants;

@@ -6,8 +6,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Restaurant.h"
+#import "Review.h"
 
-@class Review;
+
 
 @interface DetailViewController : UIViewController
 {
@@ -15,6 +16,7 @@
 
 }
 
+@property (readwrite, strong) Restaurant* restaurant;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationHeader;
 @property (weak, nonatomic) IBOutlet UILabel *cuisineLabel;
@@ -28,6 +30,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *star4;
 @property (weak, nonatomic) IBOutlet UIImageView *star5;
 
-- (Review *) findMostHelpfulReview; 
 
 @end

@@ -21,4 +21,6 @@
     return (float)numberOfHelpfulRatings / (numberOfUnhelpfulRatings + numberOfHelpfulRatings);
 }
 
+
+
 @end

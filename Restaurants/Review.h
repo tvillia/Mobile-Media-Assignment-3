@@ -27,6 +27,7 @@
 @property(readwrite) int numberOfHelpfulRatings;
 @property(readwrite) int numberOfUnhelpfulRatings;
 -(int) total; 
+-(float) percentage;
 
 @end
 // @property(readwrite, strong) NSString* address;
