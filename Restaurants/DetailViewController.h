@@ -7,6 +7,8 @@
 #import <UIKit/UIKit.h>
 #import "Restaurant.h"
 
+@class Review;
+
 @interface DetailViewController : UIViewController
 {
     Restaurant* restaurant;
