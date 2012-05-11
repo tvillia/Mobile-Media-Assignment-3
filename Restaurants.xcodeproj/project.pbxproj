@@ -113,9 +113,9 @@
 				0EE5A6EB14BEB491006BB5E1 /* DetailViewController.h */,
 				0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */,
 				0E2AFF8414DE3F3600456523 /* Mug.h */,
+				0E2AFF8514DE3F3600456523 /* Mug.m */,
 				6E69856F152151780035760F /* Review.h */,
 				6E698570152151780035760F /* Review.m */,
-				0E2AFF8514DE3F3600456523 /* Mug.m */,
 				0EE5A6DA14BEB490006BB5E1 /* Supporting Files */,
 			);
 			path = Restaurants;

@@ -63,6 +63,7 @@
     NSArray* array = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     NSArray* reviews = [restaurant reviews];
    
+    for (id review in reviews) { }
     
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];

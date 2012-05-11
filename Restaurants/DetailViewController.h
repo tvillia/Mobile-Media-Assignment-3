@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *star4;
 @property (weak, nonatomic) IBOutlet UIImageView *star5;
 
+- (Review *) findMostHelpfulReview; 
 
 @end
